@@ -48,7 +48,7 @@ the FLP semantics.
 
 ## Usage example and tutorial
 
-    $~/miniota/./run sim
+    ~/miniota$ ./run sim
     > ~a ^ ~b # (~a => b)
       Pre   : (~a ^ ~b)
       Constr: (~a => b)

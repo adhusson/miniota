@@ -2,7 +2,7 @@
 
 ## Comparison to iota
 
-We only have presence/absence of nodes (no links, parents, labels).
+No quantifiers. Only have presence/absence of nodes (no links, parents, labels).
 
 ## Overview
 
@@ -36,7 +36,7 @@ Now iota accepts a model (g,α) of F iff (g,α) satisfies the formula
 
   where < is the action order, and
 
-    a {α,β}      = a[g,α] for any atom a
+    a {α,β}      = a[g,β] for any atom a
     ~F {a,β}     = not (F{a,β})
     F ∧ G {α,β}  = F{α,β} and F{α,β}
     F ∨ G {α,β}  = F{α,β} or F{α,β}

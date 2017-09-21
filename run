@@ -1,0 +1,2 @@
+#!/bin/bash
+ocamlbuild -use-ocamlfind $1.native && ./$1.native ${@:2}

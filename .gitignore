@@ -1,0 +1,5 @@
+_build/*
+session_history
+*.native
+*.byte
+scratch

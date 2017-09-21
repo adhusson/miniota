@@ -48,14 +48,14 @@ the FLP semantics.
 
 ## Usage example and tutorial
 
-$~/miniota/./run sim
-> ~a ^ ~b # (~a => b)
-  Pre   : (~a ^ ~b)
-  Constr: (~a => b)
+    $~/miniota/./run sim
+    > ~a ^ ~b # (~a => b)
+      Pre   : (~a ^ ~b)
+      Constr: (~a => b)
 
-  a   b  #   actions
-  ----------------
-  ~a ~b  #  +b
+      a   b  #   actions
+      ----------------
+      ~a ~b  #  +b
 
 The line starting with ">" is input by the user. On the left of #, we describe the
 preconditions.  a means "a is present", while ~a means "a is absent". The
@@ -87,14 +87,14 @@ a".
 In the example above, the special meaning of => only leaves one option: add b.
 Compare to
 
-> ~a ^ ~b # (a v b)
-  Pre   : (~a ^ ~b)
-  Constr: (a v b)
+    > ~a ^ ~b # (a v b)
+      Pre   : (~a ^ ~b)
+      Constr: (a v b)
 
-  a b  #   actions
-  ----------------
-  a b  #  +a
-  a b  #  +b
+      a b  #   actions
+      ----------------
+      a b  #  +a
+      a b  #  +b
 
 Usually, "~a => b" is logically equivalent to "a v b", but here it isn't: the
 (a v b) case also allows us to add a. In the case of "~a => b", it isn't

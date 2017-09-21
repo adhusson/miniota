@@ -23,8 +23,8 @@ Here, it (informally) means that :
 
 * if F is false, iota does nothing
 * if F is true, 
-- iota is allowed to add actions that make G true
-- if G can't become true by adding actions, iota is NOT allowed to add actions
+  - iota is allowed to add actions that make G true
+  - if G can't become true by adding actions, iota is NOT allowed to add actions
   that make F false.
 
 The still informal but less so definition is as follows:

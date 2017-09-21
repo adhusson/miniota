@@ -108,14 +108,3 @@ let rec snd_order_sat rewriter m f =
   (sat m f) && not has_submodels
 
 let rec sat1 m f = snd_order_sat rw1 m f
-
-(* Sat of modem m on formula f, modulo a 2nd-order formula
- * on the minimal models of f. The requirement is of the form:
- * f(m) && ~ exists m' < m, (rewriter f)(m,m')
-*)
-let rec snd_order_sat rewriter m f = 
-  let f' = rewriter f in
-  let has_submodels = List.exists (fun m' -> eval m m' f') (sublists m) in 
-  (sat m f) && not has_submodels
-
-let rec sat1 m f = snd_order_sat rw1 m f

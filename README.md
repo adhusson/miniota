@@ -12,14 +12,14 @@ test formulas.
 
 The models given by the program respect
   * Minimality w.r.t. actions
-* Non-Asimov implication (=>)
+* Non-Asimov implication (`=>`)
 
 
 ## About the implication =>
 
-Informally, an implication F => G classically means "F is false or G is true". 
+An implication F ⇒ G classically means: _F is false or G is true_. 
 
-Here, it means that :
+Here, it (informally) means that :
 
 * if F is false, iota does nothing
 * if F is true, 
@@ -29,7 +29,7 @@ Here, it means that :
 
 The still informal but less so definition is as follows:
 
-Given a formula F, we write F[g,α] for "the graph g and actions α satisfy F".
+Given a formula F, we write F[g,α] for: _The graph g and actions α satisfy F._
 Now iota accepts a model (g,α) of F iff (g,α) satisfies the formula
 
     F[a] ∧ (¬∃ β<α. F{α,β})
@@ -71,7 +71,7 @@ end_.
 Quoted atoms (`'a`, `'b`, etc) cannot be used in the precondition (i.e. before `#`)
 
 In the example above, the precondition is: _Neither `a` nor `b` are present
-initially_. The postcondition is _if `a` is not present at the end, then `b` is."
+initially_. The postcondition is: _If `a` is not present at the end, then `b` is._
 
 The lines after `> ` are printed by the program. 
 

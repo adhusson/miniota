@@ -180,4 +180,4 @@ let () =
   ignore (LNoise.history_load histfile);
   if (Array.length Sys.argv) > 1 && Sys.argv.(1) = "test" 
   then test ()
-  else prompt ()
+  else log "miniota model finder. take a look at the readme."; log ""; prompt ()

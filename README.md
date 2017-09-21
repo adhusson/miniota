@@ -42,8 +42,8 @@ Now iota accepts a model (g,α) of F iff (g,α) satisfies the formula
     F ∨ G {α,β}  = F{α,β} or F{α,β}
     F ⇒ G {α,β} = if F[g,α] and F[g,β] then F{α,β}
 
-Note: this turns out to be a slight generalisation of what's known as the "FLP
-semantics" in AI.
+Note: this turns out to be a slight generalisation of what's known as
+the FLP semantics.
 
 
 ## Usage example and tutorial

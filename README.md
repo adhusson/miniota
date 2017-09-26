@@ -10,9 +10,9 @@ No quantifiers. Only have presence/absence of nodes (no links, parents, labels).
 No arguments gives an interactive mode, "test" shows some interesting
 test formulas.
 
-The models given by the program respect
+The models given by the program respect:
   * Minimality w.r.t. actions
-* Non-Asimov implication (`=>`)
+  * Non-Asimov implication (`=>`)
 
 
 ## About the implication =>
@@ -32,7 +32,7 @@ The still informal but less so definition is as follows:
 Given a formula F, we write F[g,α] for: _The graph g and actions α satisfy F._
 Now iota accepts a model (g,α) of F iff (g,α) satisfies the formula
 
-    F[a] ∧ (¬∃ β<α. F{α,β})
+    F[g,α] ∧ (¬∃ β<α. F{α,β})
 
   where < is the action order, and
 
@@ -49,6 +49,29 @@ the FLP semantics.
 ## Usage example and tutorial
 
     ~/miniota$ ./run sim
+    > 
+
+The interactive mode starts with a prompt. Miniota expects some constraints and possibly some preconditions, given as quantifier-free formulas. For instance, `~a ^ ~b # (~a => b)` contains preconditions and constraints, separated by `#` with preconditions on the left. 
+
+### Preconditions
+
+`a` means _`a` is initially present_, while `~a` means _`a` is initially absent_. The
+preconditions can be omitted together with `#`, in which case we assume that the
+precondition is just "true".
+
+### Constraints
+
+On the right of `#`, we give constraints. By default, atoms (`a`, `b`, etc) refer to
+nodes in the *postcondition*, so `a` means _`a` is eventually present_. 
+
+You can reference the status of a node in the precondition by prepending the character `'`, e.g. `'a ^ c => b` means _If `a`
+is initially present and `c` is eventually present, then `b` is eventually present._
+
+Quoted atoms (`'a`, `'b`, etc) cannot be used in the precondition (i.e. before `#`)
+
+### Example run
+
+    ~/miniota$ ./run sim
     > ~a ^ ~b # (~a => b)
       Pre   : (~a ^ ~b)
       Constr: (~a => b)
@@ -57,25 +80,10 @@ the FLP semantics.
       ----------------
       ~a ~b  #  +b
 
-The line starting with `> ` is given by the user. On the left of `#`, we describe the
-preconditions.  `a` means _`a` is present_, while `~a` means _`a is absent`_. The
-preconditions can be omitted together with `#`, in which case we assume that the
-precondition is just "true".
+In the example above, the precondition is: _Neither `a` nor `b` are initially present._
+The constraint is: _If `a` is not eventually present, then `b` is._
 
-On the right of `#`, we give constraints. By default, atoms (`a`, `b`, etc) refer to
-nodes in the *postcondition*. You can reference the status of a node in the
-precondition by by prepending the character ', e.g. `'a ^ c => b` means _If `a`
-is present initially and `c` is present at the end, then `b` is present at the
-end_.
-
-Quoted atoms (`'a`, `'b`, etc) cannot be used in the precondition (i.e. before `#`)
-
-In the example above, the precondition is: _Neither `a` nor `b` are present
-initially_. The postcondition is: _If `a` is not present at the end, then `b` is._
-
-The lines after `> ` are printed by the program. 
-
-The first 2 restate the preconditions and constraints as understood by the
+The first 2 lines in the response restate the preconditions and constraints as understood by the
 parser.
 
 Then all possible models are given. 

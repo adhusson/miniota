@@ -21,6 +21,7 @@ let (=>) x y = Impl (x,y)
 let rec str_of_aform f t = 
   let n ff = str_of_aform ff t in
   match f with
+  | Neg True -> "!"
   | Atm o -> t o
   | Impl (f, f') -> "("^(n f)^" => "^(n f')^")"
   | Neg f -> "~"^(n f)

@@ -44,7 +44,7 @@ let pair = formula_p >>= fun form -> char '#' *> constr_p >>| fun constr -> (Som
 
 let expr = (pair <|> (constr_p >>| fun constr -> (None,constr))) <* end_of_input
 
-let parse s = parse_only expr (`String s)
+let parse s = parse_string expr s
 
 let parse_test s = 
 let res = match parse s with

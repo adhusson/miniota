@@ -37,10 +37,10 @@ Now iota accepts a model (g,α) of F iff (g,α) satisfies the formula
   where < is the action order, and
 
     a {α,β}      = a[g,β] for any atom a
-    ~F {a,β}     = not (F{a,β})
+    ~F {α,β}     = not (F{α,β})
     F ∧ G {α,β}  = F{α,β} and F{α,β}
     F ∨ G {α,β}  = F{α,β} or F{α,β}
-    F ⇒ G {α,β} = if F[g,α] and F[g,β] then F{α,β}
+    F ⇒ G {α,β} = if F[g,α] and F[g,β] then G{α,β}
 
 Note: this turns out to be a slight generalisation of what's known as
 the FLP semantics.
